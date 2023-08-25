@@ -46,7 +46,7 @@ O5mreaderRet o5mreader_readStrPair(O5mreader *pReader, char **tagpair, int singl
 	char* pBuf;
 	static uint64_t pointer = 0;
 	int length;
-	char byte;
+	// char byte;
 	uint64_t key; 
 	int i;
 	
@@ -176,7 +176,7 @@ const char* o5mreader_strerror(int errCode) {
 	}
 }
 
-o5mreader_setError(O5mreader *pReader,int code, const char* message) {
+void o5mreader_setError(O5mreader *pReader,int code, const char* message) {
 	pReader->errCode = code;
 	if ( pReader->errMsg ) {
 		free(pReader->errMsg);
@@ -187,7 +187,7 @@ o5mreader_setError(O5mreader *pReader,int code, const char* message) {
 	}
 }
 
-o5mreader_setNoError(O5mreader *pReader) {
+void o5mreader_setNoError(O5mreader *pReader) {
 	pReader->errCode = O5MREADER_ERR_CODE_OK;
 	if ( pReader->errMsg ) {
 		free(pReader->errMsg);

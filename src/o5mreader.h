@@ -78,9 +78,9 @@ void o5mreader_close(O5mreader *pReader);
 
 const char* o5mreader_strerror(int errCode);
 	
-int o5mreader_setError(O5mreader *pReader,int code, const char* message);
+void o5mreader_setError(O5mreader *pReader,int code, const char* message);
 
-int o5mreader_setNoError(O5mreader *pReader);
+void o5mreader_setNoError(O5mreader *pReader);
 
 O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader *pReader, O5mreaderDataset* ds);
 
